@@ -1,0 +1,13 @@
+1. Tài liệu tham khảo
+- quy tắc đặt tên biến - viblo
+
+
+chú ý
+- string thì để trong"" còn character để trong ''
+- b++ vs ++b
+giống nhau đều tăng 1 đơn vị cho b
+khác
+- ++b : tăng b lên 1 đv rồi trả về b
+    ví dụ: var b = 5; return b++ = 6 ( tăng cho b lên 6 rồi trả về giá trị mới bằng 6 cho b)
+- b++: trả về b rồi tăng thêm 1 đv cho b
+    ví dụ: var b = 5; return ++b = 5 (giá trọ của b đã tăng lên 6 nhưng trả về b là giá trị ban đầu)
