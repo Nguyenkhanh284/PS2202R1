@@ -1,6 +1,6 @@
 var hisName = prompt('Mời nhập tên');
 var hisAddress = prompt('Mời nhập địa điểm');
-var yourDay = prompt('Mời bạn hhập  ngày');
+var yourDay = prompt('Mời bạn nhập thời gian');
 document.write(hisName+' '+'thương nhớ,'
 )
 document.write('<br/>');

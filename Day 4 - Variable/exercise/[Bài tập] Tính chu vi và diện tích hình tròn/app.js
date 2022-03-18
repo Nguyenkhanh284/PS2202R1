@@ -1,9 +1,9 @@
-let Radius = prompt('Mời bạn hhập bán khính hình tròn');
+let radius = parseFloat(prompt('Mời bạn hhập bán khính hình tròn'));
 const PI = 3.14;
-let Diameter = 2*Radius;
-let C = Diameter*2
-let S = (Radius**2)*PI;
-document.write('Đường kính hình tròn là:'+' '+Diameter);
+let diameter = 2*radius;
+let C = diameter*2;
+let S = (radius*radius)*PI;
+document.write('Đường kính hình tròn là:'+' '+diameter);
 document.write('<br>');
 document.write('Chu vi hình tròn là:'+' '+C);
 document.write('<br>');
