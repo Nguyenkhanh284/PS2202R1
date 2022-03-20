@@ -6,9 +6,9 @@ function checkYear() {
            alert(year + ' ' + 'la nam nhuan');
         } else if (check % 400 !== 0){
            alert(year + ' ' + 'khong phai la nam nhuan')
-        } else {
+              } else {
             alert(year + ' ' + 'la nam nhuan'); 
-        }
+              }
     } else {
         alert(year + ' ' + 'khong phai la nam nhuan')
     }

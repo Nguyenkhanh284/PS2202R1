@@ -1,8 +1,9 @@
 function checkNumber() {
-    var number = document.getElementById('inputNumber').value;
+    var numberinput = document.getElementById('inputNumber').value;
+    var number = parseFloat(numberinput);
     if (number%2==0) {
-        alert(number+' '+'la so chan')
+        alert(numberinput+' '+'la so chan')
     } else {
-        alert(number+' '+'la so le')
+        alert(numberinput+' '+'la so le')
     }
 }

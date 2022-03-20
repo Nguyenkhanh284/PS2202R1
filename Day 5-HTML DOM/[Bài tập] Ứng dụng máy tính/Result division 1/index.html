@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="result.php" class="calculator">
+        <input type="text" id="numA" placeholder="number a">
+        <input type="text" id="numB" placeholder="number b">
+        <button type="button" id="addition" onclick="add();">Addition(+)</button>
+        <button type="button" id="subtraction" onclick="sub();">Subtraction(-)</button>
+        <button type="button" id="multiplication" onclick="mul();">Multiplication(x)</button>
+        <button type="button" id="divison" onclick="div();">Divison(/)</button>
+    </form> <br>
+    <div id="result" placeholder="result" style="width: 800px; height: 30px; border: 1px solid black;">0</div>
+    <script src="./app.js"></script>
+</body>
+</html>
