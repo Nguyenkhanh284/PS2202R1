@@ -4,6 +4,7 @@ let fruitsValue, price;
 
 function inputFruits () {
     fruitsValue=fruits.value;
+    console.log (fruitsValue);
     switch (fruitsValue) {
         case 'Ổi':
         case 'Dưa hấu':

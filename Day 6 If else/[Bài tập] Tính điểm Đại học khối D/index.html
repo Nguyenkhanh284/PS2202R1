@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <td>Môn</td>
+                <td>Điểm</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Toán</td>
+                <td>
+                    <input id="markMat" type="text" onchange="saveMarkMat();">
+                </td>
+            </tr>
+            <tr>
+                <td>Lý</td>
+                <td>
+                    <input id="markPhy" type="text" onchange="saveMarkPhy();">
+                </td>
+            </tr>
+            <tr>
+                <td>Hóa</td>
+                <td>
+                    <input id="markChe" type="text" onchange="saveMarkChe();">
+                </td>
+            </tr>
+            <tr>
+                <td>Khu vực</td>
+                <td>
+                    <select name="chooseRegion" id="markRegionPlus" onchange="savemarkRegion();">
+                        <option id="Region" value="Select" style="display:none"></option>
+                        <option id="Region" value="KV1">KV1</option>
+                        <option id="Region" value="KV2">KV2</option>
+                        <option id="Region" value="KV2-NT">KV2-NT</option>
+                        <option id="Region" value="KV3">KV3</option>
+                    </select>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <button type="button" onclick="checkMark()">Tra cứu</button>
+    <h1>Điểm thi của bạn là:</h1>
+    <div id="result"></div>
+</body>
+<script src="./app.js"></script>
+</html>
