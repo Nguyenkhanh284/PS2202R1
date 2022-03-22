@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <thead>
+            <td>Amount</td>
+            <td>From Currency</td>
+            <td>To Currency</td>
+        </thead>
+        <tbody>
+            <td>
+                <input id="inputMoney" type="text" onchange="saveMoney();">
+            </td>
+            <td>
+                <select name="From Currency" id="fromCurrency" onchange="savefromCurrency();">
+                    <option value="" style="display: none;"></option>
+                    <option value="VNĐ">Việt Nam ĐỒng</option>
+                    <option value="USD">Đô la Mỹ</option>
+                    <option value="Yen">Yên Nhật</option>
+                    <option value="EUR">Đồng EURO</option>
+                    <option value="Pounds">Bảng Anh</option>
+                    <option value="AUD">Đô la Úc</option>
+                    <option value="BAT">Bath Thái</option>
+                    <option value="NDT">Nhân dân tệ</option>
+                </select>
+            </td>
+            <td>
+                <select name="To Currency" id="toCurrency" onchange="savetoCurrency();">
+                    <option value="" style="display: none;"></option>
+                    <option value="VNĐ">Việt Nam ĐỒng</option>
+                    <option value="USD">Đô la Mỹ</option>
+                    <option value="Yen">Yên Nhật</option>
+                    <option value="EUR">Đồng EURO</option>
+                    <option value="Pounds">Bảng Anh</option>
+                    <option value="AUD">Đô la Úc</option>
+                    <option value="BAT">Bath Thái</option>
+                    <option value="NDT">Nhân dân tệ</option>
+                </select>
+            </td>
+        </tbody>
+    </table>
+    <button type="button" onclick="coverCurrency();">Convert</button>
+    <div id="result"></div>
+    <script src="./app.js"></script>
+</body>
+</html>
