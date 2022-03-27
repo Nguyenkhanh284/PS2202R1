@@ -5,28 +5,39 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="result" style="width:300px; height: 30px; border: 1px solid black"></div>
-    <br>
-    <button class="number" value="0" onclick="valueNumb(this)">0</button>
-    <button class="number" value="1" onclick="valueNumb(this)">1</button>
-    <button class="number" value="2" onclick="valueNumb(this)">2</button>
-    <button class="number" value="3" onclick="valueNumb(this)">3</button>
-    <button class="number" value="4" onclick="valueNumb(this)">4</button>
-    <button class="number" value="5" onclick="valueNumb(this)">5</button>
-    <button class="number" value="6" onclick="valueNumb(this)">6</button>
-    <button class="number" value="7" onclick="valueNumb(this)">7</button>
-    <button class="number" value="8" onclick="valueNumb(this)">8</button>
-    <button class="number" value="9" onclick="valueNumb(this)">9</button>
-    <br>
-    <button class="calculation" value="+" onclick="calculated('Add')">+</button>
-    <button class="calculation" value="-" onclick="calculated('Sub')">-</button>
-    <button class="calculation" value="*" onclick="calculated('Mul')">x</button>
-    <button class="calculation" value="/" onclick="calculated('Div')">/</button>
-    <button class="calculation"  onclick="deleteNumb()">AC</button>
-    <button class="calculation"  onclick="UndoNumb();">DEL</button>
-    <button id="btn-equal" onclick="equal();">=</button>
-    <script src="./app.js"></script>
+    <div class="container">
+        <div class="display" id="display_area">
+        </div>
+        <table>
+            <tr>
+                <td><button type="button" class="btn" onclick="pressButton('1');">1</button></td>
+                <td><button type="button" class="btn" onclick="pressButton('2');">2</button></td>
+                <td><button type="button" class="btn" onclick="pressButton('3');">3</button></td>
+                <td><button type="button" class="btn" onclick="pressButton('+');">+</button></td>
+            </tr>
+            <tr>
+                <td><button type="button" class="btn" onclick="pressButton('4');">4</button></td>
+                <td><button type="button" class="btn" onclick="pressButton('5');">5</button></td>
+                <td><button type="button" class="btn" onclick="pressButton('6');">6</button></td>
+                <td><button type="button" class="btn" onclick="pressButton('-');">-</button></td>
+            </tr>
+            <tr>
+                <td><button type="button" class="btn" onclick="pressButton('7');">7</button></td>
+                <td><button type="button" class="btn" onclick="pressButton('8');">8</button></td>
+                <td><button type="button" class="btn" onclick="pressButton('9');">9</button></td>
+                <td><button type="button" class="btn" onclick="pressButton('x');">x</button></td>
+            </tr>
+            <tr>
+                <td><button type="button" class="btn" onclick="pressButton('c');">C</button></td>
+                <td><button type="button" class="btn" onclick="pressButton('0');">0</button></td>
+                <td><button type="button" class="btn" onclick="pressButton('=');">=</button></td>
+                <td><button type="button" class="btn" onclick="pressButton('/');">/</button></td>
+            </tr>
+        </table>
+    </div>
+    <script src="main.js"></script>
 </body>
 </html>
