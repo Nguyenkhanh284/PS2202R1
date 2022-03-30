@@ -1,7 +1,7 @@
-var height = parseFloat(prompt('nhap chieu cao tam giac'));
-// Tam giac vuong thuan
+var height = 10;
+// Tam giac vuong thuan trai
 
-for (let a = 1; a <= height; a++) {
+for (let a = 0; a <= height; a++) {
     for (let b = 0; b <= a; b++) {
         document.write("*");
     }
@@ -9,18 +9,32 @@ for (let a = 1; a <= height; a++) {
 }
 
 
-//  Tam giac vuong nghich
-for (var c = height; c >= 0; c--) {
-    for (var d = 0; d <= c; d++) {
+//  Tam giac vuong nghich trai
+for (var a = height; a >= 0; a--) {
+    for (var b = 0; b <= a; b++) {
         document.write("*");
     }
     document.write("<br>");
 }
 
 // Tam giac vuong thuan phai
-for (let a = height; a >= 0; a--) {
+for (let a = 0; a <= height; a++) {
+    for (let b = a; b <= height; b++) {
+        document.write("&nbsp&nbsp");
+    }
+    for (let b = 0; b<=a ; b++){
+        document.write("*");      
+    }
+    document.write("<br>");
+}
+
+// Tam giac vuong nghich phai
+for (let a = 0; a <=height; a++) {
     for (let b = 0; b <= a; b++) {
-        document.write("a");
+        document.write("&nbsp&nbsp");
+    }
+    for (let b = height; b>=a ; b--){
+        document.write("*");      
     }
     document.write("<br>");
 }
