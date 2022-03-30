@@ -1,12 +1,20 @@
-let inputNumber = document.getElementById('inputNumber');
-let saveNumb,val,a;
-function saveNumber() {
+var inputNumber = document.getElementById('inputNumber');
+var result = document.getElementById('result');
+var saveNumb,val,a,b;
+var c = '';
+function saveNumber(){
     saveNumb = inputNumber.value;
     val = parseFloat(saveNumb);
 }
 
-
-for (let i = 1; i <= saveNumb.length ; i++) {
-    a = (val-val%10)/10;
-    console.log(a);
+function changeNumber() {
+    for (let i = 1; i <= saveNumb.length ; i++) {
+        a = val%10;
+        val=(val-a)/10;
+        b=a.toString();
+        c+=b;
+    }
+    result.innerText = c;
 }
+
+
