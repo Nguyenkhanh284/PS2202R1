@@ -1,44 +1,27 @@
-let rightNumb = 10;
+let rightNumb = Math.round(Math.random()*99+1);
+let min = 1;
+let max = 100;
+let count =0;
+console.log(rightNumb);
+let inputNumb;
 function guessNumber() {
-    let inputNumb=parseFloat(prompt('Moi ban doan'));
-    // let i = 0;
-    // while (i < 3) {
-    //     if (inputNumb === rightNumb) {
-    //         alert('Ban da doan dung');
-    //         break;
-    //     } else {
-    //         alert('Ban da doan sai, hay doan lai');
-    //         inputNumb = parseFloat(prompt('Moi ban doan'));
-    //     }
-    //     i++;
-    // }
-
-
-    for (let i = 0; i < 3; i++) {
-        let a = i + 1;
-        if (inputNumb === rightNumb) {
-            alert('Ban da doan dung');
-            break;
-        } else if (i === 2) {
-            alert(`ban da het co hoi vi da doan sai ${a} lan`);
+    do {
+        inputNumb=parseFloat(prompt('Mời bạn đoán'));
+        if (inputNumb<rightNumb&&inputNumb>=min){
+            alert(`Bạn đoán sai rồi còn ${3-count} lượt`)
+             min=inputNumb;
+             alert(`Gợi ý: Số chính xác có thể nằm trong khoảng ${min} đến ${max}`);
+        } else if (inputNumb>rightNumb&&inputNumb<=max){
+            alert(`Bạn đoán sai rồi còn ${3-count} lượt`)
+             max=inputNumb
+             alert(`Gợi ý: Số chính xác có thể nằm trong khoảng ${min} đến ${max}`);
         } else {
-            alert(`Ban da doan sai ${a} lan, hay doan lai`);
-            inputNumb = parseFloat(prompt('Moi ban doan'));
+            alert(`Bạn đã đoán đúng số chính xác là ${rightNumb}`);
         }
+        count++;
+    } while (inputNumb!==rightNumb);
+    if(count==3){
+      alert('Bạn đã hết lượt');
     }
-
-    // for (let i = 0; i < 3; i++) {
-    //     if (i===3) {
-    //         break;
-    //     } else {
-    //         if (inputNumb===rightNumb) {
-    //             alert('dung');
-    //         } else {
-    //             alert('doan sai, moi nhhap lai');
-    //             inputNumb = parseFloat(prompt('Moi ban doan'));
-    //         }
-    //     }
-    // }
-
-
 }
+
