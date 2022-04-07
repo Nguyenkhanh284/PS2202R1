@@ -1,6 +1,5 @@
-var height = 10;
+var height = parseFloat(prompt('moi ban nhap chieu cao'));
 // Tam giac vuong thuan trai
-
 for (let a = 0; a <= height; a++) {
     for (let b = 0; b <= a; b++) {
         document.write("*");

@@ -1,4 +1,4 @@
-var n = 2;
+var n=2;
 var count = 0;
 var numbersInput;
 do {
@@ -10,20 +10,26 @@ do {
     }
 } while (isNaN(numbersInput));
 
-for (n = 2; n > 0; n++) {
-    if (n == 2 || n == 3) {
-        count++;
+// in ra n số nguyên tố
+while(true){
+    if (isNguyento(n)==true) {
         console.log(n);
-    } else {
-        for (var i = 2; i < n; i++) {
-            if (n % i == 0) {
-                break;
-            }
-            console.log(n);
-            count++;
-        }
+        count++;
     }
-    if (count == numbersInput) {
+    if(count==numbersInput) {
         break;
     }
+    n++;
 }
+// hàm kiểm tra n là số nguyên tố hay không
+function isNguyento(n) {
+    var check = true;
+    for (let i = 2; i < Math.sqrt(n); i++) {
+        if (n%i==0) {
+            check=false;
+            break;
+        }
+    }
+    return check;
+}
+
