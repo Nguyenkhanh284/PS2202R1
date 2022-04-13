@@ -5,6 +5,7 @@ var c = '';
 function saveNumber(){
     saveNumb = inputNumber.value;
     val = parseFloat(saveNumb);
+    console.log(val);
 }
 
 function changeNumber() {

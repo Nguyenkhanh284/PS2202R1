@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button {
+            width:90px; 
+            height:90px;
+        }
+    </style>
+</head>
+<br>
+    <h3>TIC TAC TOE</h3>
+    <input type="radio"  name="choose" value="X" onchange="save(this);">X
+    <input type="radio"  name="choose" value="O" onchange="save(this);">O</br>
+    <button type="button" onclick="play();">Play</button>
+    <p id = 'caro_board'></p>
+    <script src="./app.js"></script>
+</body>
+</html>

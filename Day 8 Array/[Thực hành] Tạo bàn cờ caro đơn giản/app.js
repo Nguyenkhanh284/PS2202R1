@@ -31,4 +31,5 @@ function changeValue() {
     boardCaro[i][j]=value;
     display(boardCaro);
 }
+changeValue()
 
