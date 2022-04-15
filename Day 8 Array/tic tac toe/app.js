@@ -1,15 +1,30 @@
 var caroBoard = document.getElementById('caro_board');
 var btns = document.getElementsByClassName('btn');
-var board = '';
-var inputValue;
+var inputValue=document.getElementsByClassName('valueInput');
+var valueInput;
+var first, second;
 
-function save(obj) {
-    inputValue = obj.value;
-    console.log(inputValue);
+    for (let i = 0; i < inputValue.length; i++) {
+        inputValue[i].addEventListener('change', function save() {
+            valueInput=inputValue[i].value;
+            if (valueInput == 'X') {
+                first = valueInput;
+                second = 'O';
+            }
+            if (valueInput == 'O') {
+                first = valueInput;
+                second = 'X';
+            }
+            
+        })
+    }
+
+function checkwin(){
+    
 }
 
 function play() {
-    var board = '<table border="1px solid black">'
+    board = '<table border="1px solid black">'
     for (let i = 0; i < 3; i++) {
         board += '<tr>';
         for (let j = 0; j < 3; j++) {
@@ -24,17 +39,17 @@ function play() {
     var count = 0;
     for (let i = 0; i < btns.length; i++) {
         btns[i].addEventListener('click', function value() {
-            count++;
             var value;
             if (count % 2 == 0) {
-                value = "x";
+                value = first;
             } else {
-                value = "O";
-            }
+                value = second;
+            } 
             btns[i].innerHTML = value;
-            if (count == 10) {
+            if (count == 9) {
                 alert('You loose');
             }
+            count++;
         });
     }
 }
