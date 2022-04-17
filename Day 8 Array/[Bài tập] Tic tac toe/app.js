@@ -1,59 +1,70 @@
-var caroBoard = document.getElementById('caroBoard');
-var inputRow = document.getElementById('inputRow');
-var inputCol = document.getElementById('inputCol');
-var row, col;
-var count = 0;
-var yourArray = [];
-function saveRow() {
-    row = inputRow.value;
-    console.log(row);
-}
-function saveCol() {
-    col = inputCol.value;
-    console.log(col);
-}
+var caroBoard = document.getElementById('caro_board');
+var btns = document.getElementsByClassName('btn');
+var inputValue = document.getElementsByClassName('valueInput');
+var valueInput;
+var first, second;
 
-// Tao ban co caro
-for (let i = 0; i < 10; i++) {
-    var arrayBig = [];
-    for (let j = 0; j < 10; j++) {
-        arrayBig.push('*');
-    }
-    yourArray.push(arrayBig);
-}
-
-function display(arr) {
-    var caro = '';
-    for (let i = 0; i < 10; i++) {
-        for (let j = 0; j < 10; j++) {
-            caro += arr[i][j] + '&nbsp&nbsp&nbsp';
+for (let i = 0; i < inputValue.length; i++) {
+    inputValue[i].addEventListener('change', function save() {
+        valueInput = inputValue[i].value;
+        if (valueInput == 'X') {
+            first = valueInput;
+            second = 'O';
         }
-        caro += '<br/>';
-    }
-    caroBoard.innerHTML = caro;
+        if (valueInput == 'O') {
+            first = valueInput;
+            second = 'X';
+        }
+
+    })
 }
-display(yourArray);
 
 
-// Choi co caro
 function play() {
-    var input;
-    var value;
-    if (count % 2 == 0) {
-        value = 'X';
-    } else if (count % 2 !== 0) {
-        value = 'O';
+    board = '<table border="1px solid black">'
+    for (let i = 0; i < 3; i++) {
+        board += '<tr>';
+        for (let j = 0; j < 3; j++) {
+            board += '<td>';
+            board += '<button type="button" class="btn"></button>';
+            board += '</td>';
+        }
+        board += '</tr>'
     }
-    input = prompt(`Moi nhap ${value}`);
-    saveRow();
-    saveCol();
-    i = row - 1;
-    j = col - 1;
-    yourArray[i][j] = input;
-    display(yourArray);
-    count++;
+    board += '</table>';
+    caroBoard.innerHTML = board;
+    game();
+}
+function game() {
+    var count = 0;
+    for (let i = 0; i < btns.length; i++) {
+        btns[i].addEventListener('click', function value() {
+            checkwin();
+            var value;
+            if (count % 2 == 0) {
+                value = first;
+            } else {
+                value = second;
+            }
+            btns[i].innerHTML = value;
+            if (count == 9) {
+                alert('You loose');
+            }
+            count++;
+        });
+    }
 }
 
-if ((yourArray[i][j]==yourArray[i+1][j]&&yourArray[i+1][j]==yourArray[i+2][j])||(yourArray[i][j]==yourArray[i][j+1]&&yourArray[i][j+1]==yourArray[i][j+2])){
-    alert('You win');
+function checkwin() {
+    for (let i = 0; i < btns.length; i++) {
+    if (btns[i].innerHTML !== '') {
+        if (btns[i].innerHTML == btns[i + 1].innerHTML && btns[i + 1].innerHTML == btns[i + 2].innerHTML) {
+            alert(`The team ${btns[i].innerHTML} win`);
+            caroBoard.innerHTML='';
+        } else if (btns[i].innerHTML == btns[i + 3].innerHTML && btns[i + 3].innerHTML == btns[i + 6].innerHTML) {
+            alert(`The team ${btns[i].innerHTML} win`);
+            caroBoard.innerHTML='';
+        }   
+    }
+    }
 }
